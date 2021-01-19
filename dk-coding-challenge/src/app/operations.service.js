@@ -33,7 +33,6 @@ function slidingWindow(x, indexBegin, indexEnd, winLength, op4Flag) {
 }
 exports.slidingWindow = slidingWindow;
 function searchContinuityAboveValue(data, indexBegin, indexEnd, threshold, winLength) {
-    console.log('inside operation 1');
     function x(i, j) {
         return (data[i + j] > threshold);
     }
@@ -41,7 +40,6 @@ function searchContinuityAboveValue(data, indexBegin, indexEnd, threshold, winLe
 }
 exports.searchContinuityAboveValue = searchContinuityAboveValue;
 function backSearchContinuityWithinRange(data, indexBegin, indexEnd, thresholdLo, thresholdHi, winLength) {
-    console.log('inside operation 2');
     function x(i, j) {
         return (data[i + j] > thresholdLo && data[i + j] < thresholdHi);
     }
@@ -49,7 +47,6 @@ function backSearchContinuityWithinRange(data, indexBegin, indexEnd, thresholdLo
 }
 exports.backSearchContinuityWithinRange = backSearchContinuityWithinRange;
 function searchContinuityAboveValueTwoSignals(data1, data2, indexBegin, indexEnd, threshold1, threshold2, winLength) {
-    console.log('inside operation 3');
     function x(i, j) {
         return (data1[i + j] > threshold1 && data2[i + j] > threshold2);
     }
@@ -57,7 +54,6 @@ function searchContinuityAboveValueTwoSignals(data1, data2, indexBegin, indexEnd
 }
 exports.searchContinuityAboveValueTwoSignals = searchContinuityAboveValueTwoSignals;
 function searchMultiContinuityWithinRange(data, indexBegin, indexEnd, thresholdLo, thresholdHi, winLength) {
-    console.log('inside operation 4');
     function x(i, j) {
         return (data[i + j] > thresholdLo && data[i + j] < thresholdHi);
     }
