@@ -2,6 +2,8 @@
 exports.__esModule = true;
 exports.searchMultiContinuityWithinRange = exports.searchContinuityAboveValueTwoSignals = exports.backSearchContinuityWithinRange = exports.searchContinuityAboveValue = exports.slidingWindow = void 0;
 function slidingWindow(x, indexBegin, indexEnd, winLength, op4Flag) {
+    // x represents functions from respective operations to be passed in as conditions to check
+    // op4Flag meant for operation 4 which requires to return beginning and end index where condition met
     var indices = [];
     for (var i = indexBegin; i < indexEnd - winLength; i++) {
         var flag = true;
@@ -10,6 +12,7 @@ function slidingWindow(x, indexBegin, indexEnd, winLength, op4Flag) {
                 continue;
             }
             else {
+                // Advance sliding window if condition false, avoids irrelevant iterations
                 i += j;
                 flag = false;
                 break;
@@ -20,6 +23,7 @@ function slidingWindow(x, indexBegin, indexEnd, winLength, op4Flag) {
                 indices.push([i + 1, i + winLength]);
             }
             else {
+                // return first index at which conditions met for sliding window
                 return i + 1;
             }
         }

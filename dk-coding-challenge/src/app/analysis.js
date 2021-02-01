@@ -7,6 +7,8 @@ var Analysis = /** @class */ (function () {
     }
     return Analysis;
 }());
+var analysis = new Analysis();
+analysis.data;
 function getInfo() {
     var results = [];
     var csv = require('csv-parser');
@@ -51,28 +53,26 @@ function Operations(results) {
     var res42 = operations_service_1.searchMultiContinuityWithinRange(ax, 880, 920, 0.0, 17.0, 3);
     console.log(res42);
     // Test Cases
-    console.log("\n ******** Assertion Test Cases ********\n");
-    console.log("\n******** Operation 1 Tests ********\n");
+    console.log("\n ******** Assertion Test Cases ******** \n");
+    console.log(" ******** Operation 1 Tests ******** \n");
     console.assert(res11 === 720, "on -1 === 720");
     console.assert(res11 === -1, "on -1 === -1");
     console.assert(res12 === 816, "on 816 === 816");
     console.assert(res12 === -1, "on 816 === -1");
-    console.log("\n******** Operation 2 Tests ********\n");
+    console.log("\n ******** Operation 2 Tests ********\n");
     console.assert(res21 === 886, "on 886 === 886");
     console.assert(res21 === -1, "on 886 === -1");
     console.assert(res22 === 263, "on 263 === 263");
     console.assert(res22 === -1, "on 263 === -1");
-    console.log("\n******** Operation 3 Tests ********\n");
+    console.log("\n ******** Operation 3 Tests ******** \n");
     console.assert(res31 === 883, "on 883 === 883");
     console.assert(res31 === -1, "on 883 === -1");
     console.assert(res32 === 500, "on 500 === 500");
     console.assert(res32 === -1, "on 500 === -1");
-    console.log("\n******** Operation 4 Tests ********\n");
+    console.log("\n ******** Operation 4 Tests ******** \n");
     console.assert(String(res41) == "886,888", "on [[886, 888]] === [[886, 888]]");
     console.assert(String(res41) === "", "on [[886, 888]] === []");
     console.assert(String(res42) == "883,885,884,886,885,887,886,888,887,889,888,890,889,891,890,892,908,910,909,911,910,912,911,913,912,914,913,915,914,916,915,917,916,918,917,919", "on res42 === [[ 883, 885 ], [ 884, 886 ],[ 885, 887 ], [ 886, [ 887, 889 ], [ 888, 890 ],[ 889, 891 ], [ 890, 892 ],[ 908, 910 ], [ 909, 911 ],[ 910, 912 ], [ 911, 913 ],[ 912, 914 ], [ 913, [ 914, 916 ], [ 915, 917 ],[ 916, 918 ], [ 917, 919 ] ]");
     console.assert(String(res42) == "915,917,916,918,917,919", "on res42 === [ [ 915, 917 ],[ 916, 918 ], [ 917, 919 ] ]");
     console.log("\n ************ Tests Complete ************\n");
 }
-var analysis = new Analysis();
-analysis.data;
