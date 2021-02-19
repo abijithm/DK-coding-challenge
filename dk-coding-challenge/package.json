@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~11.0.6",
     "@angular/router": "~11.0.6",
     "csv-parser": "^3.0.0",
+    "ngx-csv-parser": "0.0.6",
     "request": "^2.88.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
