@@ -16,18 +16,38 @@ export class AppComponent {
   csvRecords: any[] = [];
   header = false;
 
-  constructor(private operationsService: OperationsService, private http: HttpClient, private ngxCsvParser: NgxCsvParser) {
-    const file = this.http.get('../dk-coding-challenge/src/assets/latestSwing.csv', {responseType: 'text'})
-    
-    this.ngxCsvParser.parse(file[0], { header: this.header, delimiter: ',' })
-      .pipe().subscribe((result: Array<any>) => {
-        console.log('Result', result);
-        this.csvRecords = result;
-        this.Operations(this.csvRecords);
-      }, (error: NgxCSVParserError) => {
-        console.log('Error', error);
-      });
+  generateData(event?: KeyboardEvent){
+    console.log('clicked button');
+    this.Operations(this.csvRecords);
   }
+
+  constructor(private operationsService: OperationsService, private http: HttpClient, private ngxCsvParser: NgxCsvParser) {
+    const file = this.http.get('assets/latestSwing.csv', {responseType: 'text'})
+      .subscribe(
+        data => {
+          let csvToRowArray = data.split("\n");
+          for (let index = 1; index < csvToRowArray.length - 1; index++) {
+            let row = csvToRowArray[index].split(",");
+            this.csvRecords.push(parseInt( row[0], 10), row[1], row[2].trim());
+          }
+          console.log(this.csvRecords);
+      },
+      error => {
+          console.log(error);
+        }
+      );
+  }
+  //   console.log(this.csvRecords);
+  //   this.ngxCsvParser.parse(file[0], { header: this.header, delimiter: ',' })
+  //     .pipe().subscribe((result: Array<any>) => {
+  //       console.log('works');
+  //       console.log('Result', result);
+  //       this.csvRecords = result;
+  //       this.Operations(this.csvRecords);
+  //     }, (error: NgxCSVParserError) => {
+  //       console.log('Error', error);
+  //     });
+  // }
 
   // class Analysis {
   //   data = getInfo();
