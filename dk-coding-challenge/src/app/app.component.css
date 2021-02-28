@@ -1,14 +1,35 @@
 .container {
-  height: 200px;
+  height: 60%;
   position: relative;
-  border: 3px solid green;
+  border: 10px solid green;
 }
 
 .center {
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.title {
+  margin: 0;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }

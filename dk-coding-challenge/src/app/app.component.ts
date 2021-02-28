@@ -14,11 +14,97 @@ export class AppComponent {
   title = 'dk-coding-challenge';
 
   csvRecords: any[] = [];
+  ax: any[] = [];
+  ay: any[] = [];
+  az: any[] = [];
+  wx: any[] = [];
+  wy: any[] = [];
+  wz: any[] = [];
+
+  res1: any;
+  res2: any;
+  res3: any;
+  res4: any;
+
   header = false;
 
   generateData(event?: KeyboardEvent){
     console.log('clicked button');
+
     this.Operations(this.csvRecords);
+  }
+
+  getOperation1Parameters(){
+    var data = document.getElementById("data")
+    var indexBegin = document.getElementById("op1IndexBegin")
+    var indexEnd = document.getElementById("op1IndexEnd")
+    var threshold = document.getElementById("threshold")
+    var winLength = document.getElementById("winLength")
+
+    console.log(data)
+
+    {{this.operation1(data, indexBegin, indexEnd, threshold, winLength)}}
+  }
+
+  getOperation2Parameters(){
+    var data = document.getElementById("data")
+    var indexBegin = document.getElementById("op1IndexBegin")
+    var indexEnd = document.getElementById("op1IndexEnd")
+    var threshold1 = document.getElementById("thresholdLo")
+    var threshold2 = document.getElementById("thresholdHi")
+    var winLength = document.getElementById("winLength")
+
+    {{this.operation2(data, indexBegin, indexEnd, threshold1, threshold2, winLength)}}
+  }
+  getOperation3Parameters(){
+    var data1 = document.getElementById("data1")
+    var data2 = document.getElementById("data2")
+    var indexBegin = document.getElementById("op1IndexBegin")
+    var indexEnd = document.getElementById("op1IndexEnd")
+    var threshold1 = document.getElementById("threshold1")
+    var threshold2 = document.getElementById("threshold2")
+    var winLength = document.getElementById("winLength")
+
+    {{this.operation3(data1, data2, indexBegin, indexEnd, threshold1, threshold2, winLength)}}
+  }
+  getOperation4Parameters(){
+    var data = document.getElementById("data")
+    var indexBegin = document.getElementById("op1IndexBegin")
+    var indexEnd = document.getElementById("op1IndexEnd")
+    var thresholdLo = document.getElementById("thresholdLo")
+    var thresholdHi = document.getElementById("thresholdHi")
+    var winLength = document.getElementById("winLength")
+
+    {{this.operation4(data, indexBegin, indexEnd, thresholdLo, thresholdHi, winLength)}}
+  }
+
+  operation1(data, indexBegin, indexEnd, threshold, winLength, event?: KeyboardEvent){
+    console.log("operation1")
+
+    this.res1 = this.operationsService.searchContinuityAboveValue(data, indexBegin, indexEnd, threshold, winLength);
+
+    console.log(this.res1)
+  }
+  operation2(data, indexBegin, indexEnd, thresholdLo, thresholdHi, winLength, event?: KeyboardEvent){
+    console.log("operation2")
+
+    this.res1 = this.operationsService.backSearchContinuityWithinRange(data, indexBegin, indexEnd, thresholdLo, thresholdHi, winLength);
+
+    console.log(this.res2)
+  }
+  operation3(data1, data2, indexBegin, indexEnd, threshold1, threshold2, winLength, event?: KeyboardEvent){
+    console.log("operation3")
+
+    this.res3 = this.operationsService.searchContinuityAboveValueTwoSignals(data1, data2, indexBegin, indexEnd, threshold1, threshold2, winLength);
+
+    console.log(this.res3)
+  }
+  operation4(data, indexBegin, indexEnd, thresholdLo, thresholdHi, winLength, event?: KeyboardEvent){
+    console.log("operation4")
+
+    this.res4 = this.operationsService.searchMultiContinuityWithinRange(data, indexBegin, indexEnd, thresholdLo, thresholdHi, winLength);
+
+    console.log(this.res4)
   }
 
   constructor(private operationsService: OperationsService, private http: HttpClient, private ngxCsvParser: NgxCsvParser) {
@@ -28,9 +114,14 @@ export class AppComponent {
           let csvToRowArray = data.split("\n");
           for (let index = 1; index < csvToRowArray.length - 1; index++) {
             let row = csvToRowArray[index].split(",");
-            this.csvRecords.push(parseInt( row[0], 10), row[1], row[2].trim());
+            this.ax.push(row[0]);
+            this.ay.push(row[1]);
+            this.az.push(row[2]);
+            this.wx.push(row[0]);
+            this.wy.push(row[1]);
+            this.wz.push(row[2]);
           }
-          console.log(this.csvRecords);
+          this.csvRecords.concat(this.ax, this.ay, this.az, this.wx, this.wy, this.wz)
       },
       error => {
           console.log(error);
@@ -73,6 +164,8 @@ export class AppComponent {
   public Operations(results){
   
     console.log('Operations');
+
+    console.log(results[0])
 
     let ax = results.map(x=> x.ax)
     let ay = results.map(x=> x.ay)

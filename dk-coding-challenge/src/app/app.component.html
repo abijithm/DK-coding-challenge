@@ -1,6 +1,174 @@
-<div class="container">
-  <div class="center">
-    <div>DK Coding Challenge</div>
-    <button (click)="generateData()">Operations kickoff</button>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- <div class="center">DK Coding Challenge</div> -->
+<div class=title>
+  <h1>DK Coding Challenge</h1>
+</div>
+<div class="row container center">
+  <div class="column">
+    <h2>Operation 1</h2>
+    <div class="dropdown">Data
+      <select name="data" id="data">
+        <option value="ax">ax</option>
+        <option value="ay">ay</option>
+        <option value="az">az</option>
+        <option value="wx">wx</option>
+        <option value="wy">wy</option>
+        <option value="wz">wz</option>
+      </select>
+    </div>
+    <div style="columns: md -1px;">
+       IndexBegin
+      <input type="text" id="op1IndexBegin"/>
+    </div>
+    <div style="columns: md -1px;">
+      IndexEnd
+      <input type="text" id="op1IndexEnd"/>
+    </div>
+    <div style="columns: md -1px;">
+      Threshold
+      <input type="text" id="threshold"/>
+    </div>
+    <div style="columns: md -1px;">
+      WinLength
+      <input type="text" id="winLength"/>
+    </div>
+    <button (click)="getOperation1Parameters();">Operation 1</button>
+    <div>Operation 1 Result:
+      <b>{{res1}}</b>
+    </div>
   </div>
+
+  <div class="column">
+    <h2>Operation 2</h2>
+    <div class="dropdown">Data
+      <select name="data" id="data">
+        <option value="ax">ax</option>
+        <option value="ay">ay</option>
+        <option value="az">az</option>
+        <option value="wx">wx</option>
+        <option value="wy">wy</option>
+        <option value="wz">wz</option>
+      </select>
+    </div>
+    <div style="columns: md -1px;">
+      IndexBegin
+      <input type="text" id="op1IndexBegin"/>
+    </div>
+    <div style="columns: md -1px;">
+      IndexEnd
+      <input type="text" id="op1IndexEnd"/>
+    </div>
+    <div style="columns: md -1px;">
+      Threshold1
+      <input type="text" id="thresholdLo"/>
+    </div>
+    <div style="columns: md -1px;">
+      Threshold2
+      <input type="text" id="thresholdHi"/>
+    </div>
+    <div style="columns: md -1px;">
+      WinLength
+      <input type="text" id="winLength"/>
+    </div>
+    <button (click)="getOperation2Parameters();">Operation 2</button>
+    <div>Operation 2 Result: 
+      <b>{{res2}}</b>
+    </div>
+  </div>
+
+  <div class="column">
+    <h2>Operation 3</h2>
+    <div class="dropdown">Data1
+      <select name="data1" id="data1">
+        <option value="ax">ax</option>
+        <option value="ay">ay</option>
+        <option value="az">az</option>
+        <option value="wx">wx</option>
+        <option value="wy">wy</option>
+        <option value="wz">wz</option>
+      </select>
+    </div>
+    <div class="dropdown">Data2
+      <select name="data2" id="data2">
+        <option value="ax">ax</option>
+        <option value="ay">ay</option>
+        <option value="az">az</option>
+        <option value="wx">wx</option>
+        <option value="wy">wy</option>
+        <option value="wz">wz</option>
+      </select>
+    </div>
+    <div style="columns: md -1px;">
+      IndexBegin
+      <input type="text" id="op1IndexBegin"/>
+    </div>
+    <div style="columns: md -1px;">
+      IndexEnd
+      <input type="text" id="op1IndexEnd"/>
+    </div>
+    <div style="columns: md -1px;">
+      Threshold1
+      <input type="text" id="threshold1"/>
+    </div>
+    <div style="columns: md -1px;">
+      Threshold2
+      <input type="text" id="threshold2"/>
+    </div>
+    <div style="columns: md -1px;">
+      WinLength
+      <input type="text" id="winLength"/>
+    </div>
+    <button (click)="getOperation3Parameters();">Operation 3</button>
+    <div>Operation 3 Result:
+      <b>{{res3}}</b>
+    </div>
+  </div>
+
+  <div class="column">
+    <h2>Operation 4</h2>
+    <div class="dropdown">Data
+      <select name="data" id="data">
+        <option value="ax">ax</option>
+        <option value="ay">ay</option>
+        <option value="az">az</option>
+        <option value="wx">wx</option>
+        <option value="wy">wy</option>
+        <option value="wz">wz</option>
+      </select>
+    </div>
+    <div style="columns: md -1px;">
+      IndexBegin
+      <input type="text" id="op1IndexBegin"/>
+    </div>
+    <div style="columns: md -1px;">
+      IndexEnd
+      <input type="text" id="op1IndexEnd"/>
+    </div>
+    <div style="columns: md -1px;">
+      Threshold1
+      <input type="text" id="thresholdLo"/>
+    </div>
+    <div style="columns: md -1px;">
+      Threshold2
+      <input type="text" id="thresholdHi"/>
+    </div>
+    <div style="columns: md -1px;">
+      WinLength
+      <input type="text" id="winLength"/>
+    </div>
+    <button (click)="getOperation4Parameters();">Operation 4</button>
+    <div>Operation 4 Result: 
+      <b>{{res4}}</b>
+    </div>
+  </div>
+  
 </div>
