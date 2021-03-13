@@ -44,8 +44,14 @@ export class OperationsService{
   }
 
   public searchContinuityAboveValue(data, indexBegin: number, indexEnd: number, threshold: number, winLength: number){
+    console.log(typeof data[1])
+    console.log(typeof threshold)
     function x(i: number, j: number){
-        return (data[i+j] > threshold);
+      console.log(Number(data[i+j]))
+      if (Number(data[i+j]) > Number(threshold)) {
+        console.log(data[i+j])
+      }
+      return (data[i+j] > threshold);
     }
     return this.slidingWindow(x, indexBegin, indexEnd, winLength, false);
   }

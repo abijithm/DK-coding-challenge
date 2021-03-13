@@ -6,6 +6,7 @@ import { HttpClientModule} from "@angular/common/http";
 // import { OperationsService } from './operations.service';
 
 import { NgxCsvParserModule } from 'ngx-csv-parser';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { NgxCsvParserModule } from 'ngx-csv-parser';
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgxCsvParserModule
+    NgxCsvParserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

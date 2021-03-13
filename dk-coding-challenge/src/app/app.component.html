@@ -16,7 +16,7 @@
   <div class="column">
     <h2>Operation 1</h2>
     <div class="dropdown">Data
-      <select name="data" id="data">
+      <select name="data" [(ngModel)]="op1Data">
         <option value="ax">ax</option>
         <option value="ay">ay</option>
         <option value="az">az</option>
@@ -27,21 +27,21 @@
     </div>
     <div style="columns: md -1px;">
        IndexBegin
-      <input type="text" id="op1IndexBegin"/>
+      <input type="text" [(ngModel)]="op1IndexBegin"/>
     </div>
     <div style="columns: md -1px;">
       IndexEnd
-      <input type="text" id="op1IndexEnd"/>
+      <input type="text" [(ngModel)]="op1IndexEnd"/>
     </div>
     <div style="columns: md -1px;">
       Threshold
-      <input type="text" id="threshold"/>
+      <input type="text" [(ngModel)]="op1Threshold"/>
     </div>
     <div style="columns: md -1px;">
       WinLength
-      <input type="text" id="winLength"/>
+      <input type="text" [(ngModel)]="op1WinLength"/>
     </div>
-    <button (click)="getOperation1Parameters();">Operation 1</button>
+    <button (click)="operation1();">Operation 1</button>
     <div>Operation 1 Result:
       <b>{{res1}}</b>
     </div>
@@ -50,7 +50,7 @@
   <div class="column">
     <h2>Operation 2</h2>
     <div class="dropdown">Data
-      <select name="data" id="data">
+      <select name="data" [(ngModel)]="op2Data">
         <option value="ax">ax</option>
         <option value="ay">ay</option>
         <option value="az">az</option>
@@ -61,25 +61,25 @@
     </div>
     <div style="columns: md -1px;">
       IndexBegin
-      <input type="text" id="op1IndexBegin"/>
+      <input type="text" [(ngModel)]="op2IndexBegin"/>
     </div>
     <div style="columns: md -1px;">
       IndexEnd
-      <input type="text" id="op1IndexEnd"/>
+      <input type="text" [(ngModel)]="op2IndexEnd"/>
     </div>
     <div style="columns: md -1px;">
       Threshold1
-      <input type="text" id="thresholdLo"/>
+      <input type="text" [(ngModel)]="op2ThresholdLo"/>
     </div>
     <div style="columns: md -1px;">
       Threshold2
-      <input type="text" id="thresholdHi"/>
+      <input type="text" [(ngModel)]="op2ThresholdHi"/>
     </div>
     <div style="columns: md -1px;">
       WinLength
-      <input type="text" id="winLength"/>
+      <input type="text" [(ngModel)]="op2WinLength"/>
     </div>
-    <button (click)="getOperation2Parameters();">Operation 2</button>
+    <button (click)="operation2();">Operation 2</button>
     <div>Operation 2 Result: 
       <b>{{res2}}</b>
     </div>
@@ -88,7 +88,7 @@
   <div class="column">
     <h2>Operation 3</h2>
     <div class="dropdown">Data1
-      <select name="data1" id="data1">
+      <select name="data1" [(ngModel)]="op3Data1">
         <option value="ax">ax</option>
         <option value="ay">ay</option>
         <option value="az">az</option>
@@ -98,7 +98,7 @@
       </select>
     </div>
     <div class="dropdown">Data2
-      <select name="data2" id="data2">
+      <select name="data2" [(ngModel)]="op3Data2">
         <option value="ax">ax</option>
         <option value="ay">ay</option>
         <option value="az">az</option>
@@ -109,25 +109,25 @@
     </div>
     <div style="columns: md -1px;">
       IndexBegin
-      <input type="text" id="op1IndexBegin"/>
+      <input type="text" [(ngModel)]="op3IndexBegin"/>
     </div>
     <div style="columns: md -1px;">
       IndexEnd
-      <input type="text" id="op1IndexEnd"/>
+      <input type="text" [(ngModel)]="op3IndexEnd"/>
     </div>
     <div style="columns: md -1px;">
       Threshold1
-      <input type="text" id="threshold1"/>
+      <input type="text" [(ngModel)]="op3Threshold1"/>
     </div>
     <div style="columns: md -1px;">
       Threshold2
-      <input type="text" id="threshold2"/>
+      <input type="text" [(ngModel)]="op3Threshold2"/>
     </div>
     <div style="columns: md -1px;">
       WinLength
-      <input type="text" id="winLength"/>
+      <input type="text" [(ngModel)]="op3WinLength"/>
     </div>
-    <button (click)="getOperation3Parameters();">Operation 3</button>
+    <button (click)="operation3();">Operation 3</button>
     <div>Operation 3 Result:
       <b>{{res3}}</b>
     </div>
@@ -136,7 +136,7 @@
   <div class="column">
     <h2>Operation 4</h2>
     <div class="dropdown">Data
-      <select name="data" id="data">
+      <select name="data" [(ngModel)]="op4Data">
         <option value="ax">ax</option>
         <option value="ay">ay</option>
         <option value="az">az</option>
@@ -147,25 +147,25 @@
     </div>
     <div style="columns: md -1px;">
       IndexBegin
-      <input type="text" id="op1IndexBegin"/>
+      <input type="text" [(ngModel)]="op4IndexBegin"/>
     </div>
     <div style="columns: md -1px;">
       IndexEnd
-      <input type="text" id="op1IndexEnd"/>
+      <input type="text" [(ngModel)]="op4IndexEnd"/>
     </div>
     <div style="columns: md -1px;">
       Threshold1
-      <input type="text" id="thresholdLo"/>
+      <input type="text" [(ngModel)]="op4ThresholdLo"/>
     </div>
     <div style="columns: md -1px;">
       Threshold2
-      <input type="text" id="thresholdHi"/>
+      <input type="text" [(ngModel)]="op4ThresholdHi"/>
     </div>
     <div style="columns: md -1px;">
       WinLength
-      <input type="text" id="winLength"/>
+      <input type="text" [(ngModel)]="op4WinLength"/>
     </div>
-    <button (click)="getOperation4Parameters();">Operation 4</button>
+    <button (click)="operation4();">Operation 4</button>
     <div>Operation 4 Result: 
       <b>{{res4}}</b>
     </div>
