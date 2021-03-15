@@ -28,36 +28,36 @@ export class AppComponent {
 
 
   // Operation 1 
-  op1Data: any;
-  op1IndexBegin: any;
-  op1IndexEnd: any;
-  op1Threshold: any;
-  op1WinLength: any;
+  op1Data: string;
+  op1IndexBegin: number;
+  op1IndexEnd: number;
+  op1Threshold: number;
+  op1WinLength: number;
 
   // Operation 2
-  op2Data: any;
-  op2IndexBegin: any;
-  op2IndexEnd: any;
-  op2ThresholdLo: any;
-  op2ThresholdHi: any;
-  op2WinLength: any;
+  op2Data: string;
+  op2IndexBegin: number;
+  op2IndexEnd: number;
+  op2ThresholdLo: number;
+  op2ThresholdHi: number;
+  op2WinLength: number;
 
   // Operation 3
-  op3Data1: any;
-  op3Data2: any;
-  op3IndexBegin: any;
-  op3IndexEnd: any;
-  op3Threshold1: any;
-  op3Threshold2: any;
-  op3WinLength: any;
+  op3Data1: string;
+  op3Data2: string;
+  op3IndexBegin: number;
+  op3IndexEnd: number;
+  op3Threshold1: number;
+  op3Threshold2: number;
+  op3WinLength: number;
 
   // Operation 4
-  op4Data: any;
-  op4IndexBegin: any;
-  op4IndexEnd: any;
-  op4ThresholdLo: any;
-  op4ThresholdHi: any;
-  op4WinLength: any;
+  op4Data: string;
+  op4IndexBegin: number;
+  op4IndexEnd: number;
+  op4ThresholdLo: number;
+  op4ThresholdHi: number;
+  op4WinLength: number;
 
   header = false;
 
