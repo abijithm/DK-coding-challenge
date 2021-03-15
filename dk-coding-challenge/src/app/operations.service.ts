@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { convertToObject } from 'typescript';
 
 @Injectable({
   providedIn: 'root',
@@ -47,28 +48,28 @@ export class OperationsService{
 
   public searchContinuityAboveValue(data, indexBegin: number, indexEnd: number, threshold: number, winLength: number){
     function x(i: number, j: number){
-      return (data[Number(i)+Number(j)] > threshold);
+      return (Number(data[i+j]) > Number(threshold));
     }
     return this.slidingWindow(x, Number(indexBegin), Number(indexEnd), Number(winLength), false);
   }
 
   public backSearchContinuityWithinRange(data, indexBegin: number, indexEnd: number, thresholdLo: number, thresholdHi: number, winLength: number){
     function x(i: number, j: number){
-      return (data[i+j] > thresholdLo && data[i+j] < thresholdHi);
+      return (Number(data[i+j]) > Number(thresholdLo) && Number(data[i+j]) < Number(thresholdHi));
     }
     return this.slidingWindow(x, Number(indexBegin), Number(indexEnd), Number(winLength), false);
   }
 
   public searchContinuityAboveValueTwoSignals(data1, data2, indexBegin: number, indexEnd: number, threshold1: number, threshold2: number, winLength: number){
     function x(i: number, j: number){
-      return (data1[i+j] > threshold1 && data2[i+j] > threshold2)
+      return (Number(data1[i+j]) > Number(threshold1) && Number(data2[i+j]) > Number(threshold2))
     }
     return this.slidingWindow(x, Number(indexBegin), Number(indexEnd), Number(winLength), false);
   }
 
   public searchMultiContinuityWithinRange(data, indexBegin: number, indexEnd: number, thresholdLo: number, thresholdHi: number, winLength: number){  
     function x(i: number, j: number){
-      return (data[i+j] > thresholdLo && data[i+j] < thresholdHi);
+      return (Number(data[i+j]) > Number(thresholdLo) && Number(data[i+j]) < Number(thresholdHi));
     }
     return this.slidingWindow(x, Number(indexBegin), Number(indexEnd), Number(winLength), true);
   }
